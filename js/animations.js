@@ -4,8 +4,8 @@ function createHeart() {
     heart.innerHTML = "&hearts;";
 
     const rotation = Math.random() * 360;
-    const size = 20 + Math.random() * 45;
-    const duration = 8 + Math.random() * 12;
+    const size = 25 + Math.random() * 75;
+    const duration = 12 + Math.random() * 16;
 
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = size + "px";
@@ -18,4 +18,4 @@ function createHeart() {
     heart.addEventListener("animationend", () => heart.remove());
 }
 
-setInterval(createHeart, 150);
+setInterval(createHeart, 200);
