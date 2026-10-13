@@ -1,0 +1,98 @@
+html {
+    background: #cf8ba2;
+    overflow: hidden;
+}
+
+.headline {
+    text-align: center;
+}
+
+h1 {
+    padding-top: 6vh;
+
+    color: white;
+    font-size: 8vh;
+    text-shadow: 2px 3px 5px rgba(80, 20, 40, 0.45);
+}
+
+.button_holder {
+    padding-top: 10vw;
+    width: 100%;
+    text-align: center;
+}
+
+
+.lbutton {
+    /* Responsive circular size */
+    width: max(50vw, 220px);
+    aspect-ratio: 1;
+    height: auto;
+
+    border-radius: 50%;
+    border: 2px solid #6e1230;
+
+    background: linear-gradient(145deg, #c52c60, #9c1e48);
+    color: white;
+
+    font-size: 8vw;
+    font-weight: bold;
+    font-family: "Brush Script MT", cursive;
+
+    /* Depth */
+    box-shadow:
+        0 6px 0 #68122e,
+        0 8px 16px rgb(0 0 0 / 25%);
+
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+
+    /* Smooth interaction */
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        filter 0.15s ease;
+}
+
+.lbutton:hover {
+    filter: brightness(1.1);
+}
+
+.lbutton:active {
+    transform: scale(0.94);
+    box-shadow:
+        0 2px 0 #68122e,
+        0 3px 8px rgb(0 0 0 / 20%);
+}
+
+.lbutton:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 5px;
+}
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+    .lbutton {
+        transition: none;
+    }
+}
+
+
+.heart {
+    position: fixed;
+    top: -50px;
+    color: rgb(251, 249, 249);
+    pointer-events: none;
+    z-index: -1;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    from {
+        top: -50px;
+    }
+    to {
+        top: 110vh;
+    }
+}
