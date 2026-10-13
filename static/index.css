@@ -17,7 +17,7 @@ html {
 }
 
 h1 {
-    padding-top: 3vh;
+    /* padding-top: 3vh; */
 
     color: white;
     font-size: 8vh;
@@ -25,7 +25,7 @@ h1 {
 }
 
 .button_holder {
-    padding-top: 6vw;
+    padding-top: 2vh;
     width: 100%;
     text-align: center;
 }
@@ -95,24 +95,25 @@ h1 {
 }
 
 .motd_holder {
-    /* flex: 1; */
+    flex: 1;
     padding: 3vw;
-    padding-top: 20vw;
+    padding-bottom: 5vw;
     box-sizing: border-box;
 
     display: flex;
+    flex-direction: column;
 }
 
 .motd_box {
-    /* flex: 1; */
-    min-height: 20vw;
+    margin-top: auto;
 
+    min-height: 20vw;
     max-height: 50vw;
     width: 100%;
+
     background-color: #333333;
     border-radius: 10vw;
     overflow: hidden;
-
     border: 1vw solid #111111;
 }
 
