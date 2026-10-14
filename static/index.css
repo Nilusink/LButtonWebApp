@@ -235,7 +235,7 @@ h1 {
 
     background: white;
     color: #6e1230;
-    font: 4vw Tahoma, sans-serif;
+    font: 5vw Tahoma, sans-serif;
 }
 
 .motd_dialog_buttons {
@@ -252,8 +252,11 @@ h1 {
 
     background: linear-gradient(145deg, #c52c60, #9c1e48);
     color: white;
-    font-weight: bold;
     cursor: pointer;
+
+    font-family: Tahoma, sans-serif;
+    font-size: 5vw;
+    font-weight: bold;
 }
 
 .motd_dialog_buttons button:disabled {
