@@ -1,5 +1,11 @@
 html {
-    background: #cf8ba2;
+    background: linear-gradient(
+        135deg,
+        #e8a9bd 0%,
+        #cf8ba2 45%,
+        #b96b89 100%
+    );
+
     overflow: hidden;
     min-height: 100dvh;
 }
@@ -104,6 +110,7 @@ h1 {
     flex-direction: column;
 }
 
+
 .motd_box {
     margin-top: auto;
 
@@ -111,33 +118,152 @@ h1 {
     max-height: 50vw;
     width: 100%;
 
-    background-color: #333333;
-    border-radius: 10vw;
+    display: flex;
+    flex-direction: column;
+
+    background: #fff4f7;
+    border: 2px solid #9c1e48;
+    border-radius: 5vw;
     overflow: hidden;
-    border: 1vw solid #111111;
+
+    box-shadow:
+        0 5px 0 #9c1e48,
+        0 8px 18px rgb(80 20 40 / 20%);
 }
+
 
 .motd_title_box {
     width: 100%;
-    height: 10vw;
+    min-height: 10vw;
+    box-sizing: border-box;
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 2vw;
 
-    background-color: #222222;
+    padding: 2vw 4vw;
 
+    background: linear-gradient(120deg, #c52c60, #9c1e48);
     color: white;
-    font-size: 6vw;
-    font-family: "Brush Script MT", cursive;
 
-    padding-left: 6vw;
+    font-family: "Brush Script MT", cursive;
+    font-size: 6vw;
+    font-weight: 300;
+
+    text-shadow: 1px 2px 3px rgb(80 20 40 / 30%);
+}
+
+.motd_title_box button {
+    flex-shrink: 0;
+
+    padding: 1.5vw 3vw;
+    border: 1px solid rgb(255 255 255 / 50%);
+    border-radius: 2vw;
+
+    background: rgb(255 255 255 / 15%);
+    color: white;
+
+    font-family: Tahoma, sans-serif;
+    font-size: 3.5vw;
+    font-weight: bold;
+
+    cursor: pointer;
+    text-shadow: none;
+
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.motd_title_box button:hover {
+    background: rgb(255 255 255 / 30%);
+}
+
+.motd_title_box button:active {
+    transform: scale(0.95);
+}
+
+.motd_title_box button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
 }
 
 .motd {
-    padding: 2vw;
-    margin-bottom: 5vw;
+    padding: 3vw 4vw;
+    margin: 0;
 
-    color: white;
+    color: #6e1230;
+    font-family: Tahoma, sans-serif;
     font-size: 4vw;
-    font-family: Tahoma;
+    line-height: 1.5;
+
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+}
+
+
+#motd_dialog {
+    width: min(80vw, 450px);
+    padding: 5vw;
+    border: 2px solid #9c1e48;
+    border-radius: 5vw;
+
+    background: #fff4f7;
+    color: #6e1230;
+
+    box-shadow: 0 10px 40px rgb(80 20 40 / 35%);
+}
+
+#motd_dialog::backdrop {
+    background: rgb(50 10 25 / 55%);
+    backdrop-filter: blur(3px);
+}
+
+#motd_dialog h2 {
+    margin-top: 0;
+    font-family: "Brush Script MT", cursive;
+    font-size: 7vw;
+}
+
+#motd_input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 30vw;
+    padding: 3vw;
+
+    resize: vertical;
+    border: 1px solid #cf8ba2;
+    border-radius: 3vw;
+
+    background: white;
+    color: #6e1230;
+    font: 4vw Tahoma, sans-serif;
+}
+
+.motd_dialog_buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2vw;
+    margin-top: 3vw;
+}
+
+.motd_dialog_buttons button {
+    padding: 2vw 4vw;
+    border: 1px solid #6e1230;
+    border-radius: 2vw;
+
+    background: linear-gradient(145deg, #c52c60, #9c1e48);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.motd_dialog_buttons button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+#motd_status {
+    overflow-wrap: anywhere;
+    font: 3.5vw Tahoma, sans-serif;
 }

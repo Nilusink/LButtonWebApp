@@ -24,8 +24,28 @@
        <div class="motd_holder">
         <div class="motd_box">
             <div class="motd_title_box">
-                Message of the day:
+                <span>Message of the day:</span>
+                <button id="motd_edit_button" type="button">+</button>
             </div>
+            <dialog id="motd_dialog">
+            <form id="motd_form">
+                <h2>Write a message ♡</h2>
+
+                <textarea
+                    id="motd_input"
+                    placeholder="Write something sweet..."
+                    required
+                    maxlength="1000"
+                ></textarea>
+
+                <div class="motd_dialog_buttons">
+                    <button type="button" id="motd_cancel">Cancel</button>
+                    <button type="submit" id="motd_send">Send ♡</button>
+                </div>
+
+                <p id="motd_status" role="status"></p>
+            </form>
+        </dialog>
             <div id="motd" class="motd">
             </div>
         </div>
