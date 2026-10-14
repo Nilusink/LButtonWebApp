@@ -39,23 +39,23 @@ h1 {
 
 .lbutton {
     /* Responsive circular size */
-    width: max(50vw, 220px);
+    width: max(60vw, 220px);
     aspect-ratio: 1;
     height: auto;
 
     border-radius: 50%;
-    border: 2px solid #6e1230;
+    border: 0.8vw solid #6e1230;
 
     background: linear-gradient(145deg, #c52c60, #9c1e48);
     color: white;
 
-    font-size: 8vw;
+    font-size: 12vw;
     font-weight: bold;
     font-family: "Brush Script MT", cursive;
 
     box-shadow:
-        0 6px 0 #68122e,
-        0 8px 16px rgb(0 0 0 / 25%);
+        0 1.5vw 0 #68122e,
+        0 4vw 8vw rgb(0 0 0 / 25%);
 
     touch-action: manipulation;
     user-select: none;
@@ -100,6 +100,7 @@ h1 {
     }
 }
 
+
 .motd_holder {
     flex: 1;
     padding: 3vw;
@@ -109,7 +110,6 @@ h1 {
     display: flex;
     flex-direction: column;
 }
-
 
 .motd_box {
     margin-top: auto;
@@ -122,15 +122,14 @@ h1 {
     flex-direction: column;
 
     background: #fff4f7;
-    border: 2px solid #9c1e48;
+    border: 0.5vw solid #9c1e48;
     border-radius: 5vw;
     overflow: hidden;
 
     box-shadow:
-        0 5px 0 #9c1e48,
-        0 8px 18px rgb(80 20 40 / 20%);
+        0 1.25vw 0 #9c1e48,
+        0 2vw 4.5vw rgb(80 20 40 / 20%);
 }
-
 
 .motd_title_box {
     width: 100%;
@@ -151,14 +150,14 @@ h1 {
     font-size: 6vw;
     font-weight: 300;
 
-    text-shadow: 1px 2px 3px rgb(80 20 40 / 30%);
+    text-shadow: 0.25vw 0.5vw 0.75vw rgb(80 20 40 / 30%);
 }
 
 .motd_title_box button {
     flex-shrink: 0;
 
     padding: 1.5vw 3vw;
-    border: 1px solid rgb(255 255 255 / 50%);
+    border: 0.25vw solid rgb(255 255 255 / 50%);
     border-radius: 2vw;
 
     background: rgb(255 255 255 / 15%);
@@ -183,8 +182,8 @@ h1 {
 }
 
 .motd_title_box button:focus-visible {
-    outline: 2px solid white;
-    outline-offset: 3px;
+    outline: 0.5vw solid white;
+    outline-offset: 0.75vw;
 }
 
 .motd {
@@ -200,22 +199,21 @@ h1 {
     overflow-wrap: anywhere;
 }
 
-
 #motd_dialog {
-    width: min(80vw, 450px);
+    width: 80vw;
     padding: 5vw;
-    border: 2px solid #9c1e48;
+    border: 0.5vw solid #9c1e48;
     border-radius: 5vw;
 
     background: #fff4f7;
     color: #6e1230;
 
-    box-shadow: 0 10px 40px rgb(80 20 40 / 35%);
+    box-shadow: 0 2.5vw 10vw rgb(80 20 40 / 35%);
 }
 
 #motd_dialog::backdrop {
     background: rgb(50 10 25 / 55%);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(0.75vw);
 }
 
 #motd_dialog h2 {
@@ -232,7 +230,7 @@ h1 {
     padding: 3vw;
 
     resize: vertical;
-    border: 1px solid #cf8ba2;
+    border: 0.25vw solid #cf8ba2;
     border-radius: 3vw;
 
     background: white;
@@ -249,7 +247,7 @@ h1 {
 
 .motd_dialog_buttons button {
     padding: 2vw 4vw;
-    border: 1px solid #6e1230;
+    border: 0.25vw solid #6e1230;
     border-radius: 2vw;
 
     background: linear-gradient(145deg, #c52c60, #9c1e48);
