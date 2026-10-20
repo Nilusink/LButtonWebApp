@@ -268,3 +268,35 @@ h1 {
     overflow-wrap: anywhere;
     font: 3.5vw Tahoma, sans-serif;
 }
+
+#status_box {
+    position: absolute;
+    background: gray;
+    width: 3vw;
+    height: 3vw;
+    left: 3vw;
+    top: 6vw;
+    border-radius: 50%;
+}
+
+#last_seen_tooltip {
+    position: absolute;
+
+    /* center vertically on the circle */
+    top: 50%;
+    left: 150%;
+    transform: translateY(-50%);
+
+    font: 3vw Tahoma, sans-serif;
+
+    opacity: 0;
+    background: #333;
+    color: white;
+    padding: 1.5vw 2vw;
+    border-radius: 2vw;
+    white-space: nowrap;
+}
+
+#status_box:hover #last_seen_tooltip {
+    opacity: 1;
+}

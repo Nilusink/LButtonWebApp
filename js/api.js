@@ -133,6 +133,52 @@ form.addEventListener("submit", async (event) => {
 });
 
 
+// status icon
+function formatTime(seconds) {
+    if (seconds < 60) return `${Math.floor(seconds)}s`;
+    if (seconds < 3600) return `${Math.floor(seconds / 60)}m`;
+    if (seconds < 86400) return `${Math.floor(seconds / 3600)}h`;
+    return `${Math.floor(seconds / 86400)}d`;
+}
+
+async function updateStatus()
+{
+    // show status of other device
+    try
+    {
+        const response = await fetch(`${API_URL}/status?client_id=`+user_config.tid);
+
+        if (!response.ok)
+        {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        document.getElementById("last_seen_tooltip").textContent = "last seen: " + formatTime(data.result);
+        if (data.result < 10)
+        {   // now
+            document.getElementById("status_box").style.backgroundColor = "green";
+            document.getElementById("last_seen_tooltip").textContent = "last seen: now";
+        }
+        else if (data.result < 300)
+        {   // recently
+            document.getElementById("status_box").style.backgroundColor = "#ff7700";
+        }
+        else
+        {   // offline
+            document.getElementById("status_box").style.backgroundColor = "red";
+        }
+    }
+    catch (error)
+    {
+        console.error("Failed to load status:", error);
+        document.getElementById("status_box").style.backgroundColor = "red";
+    }  
+}
+
 // function calls
 updateMOTD();
+updateStatus();
 setInterval(updateMOTD, 60000);
+setInterval(updateStatus, 1000);
