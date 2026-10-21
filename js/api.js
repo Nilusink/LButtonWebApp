@@ -173,7 +173,8 @@ async function updateStatus()
     catch (error)
     {
         console.error("Failed to load status:", error);
-        document.getElementById("status_box").style.backgroundColor = "red";
+        document.getElementById("status_box").style.backgroundColor = "gray";
+        document.getElementById("last_seen_tooltip").textContent = "api unreachable";
     }  
 }
 
