@@ -48,7 +48,22 @@ async function updateMOTD()
 
 
 // button click
-document.getElementById("btn").addEventListener("click", async () => {
+const button = document.getElementById("btn");
+button.addEventListener("click", async () => {
+    // visual feedback for everyone
+    button.classList.add("clicked");
+    setTimeout(() => button.classList.remove("clicked"), 700);
+
+    // let the browser render the change
+    await new Promise(resolve => requestAnimationFrame(resolve));
+
+    // haptic feedback
+    if ("vibrate" in navigator)
+    {
+        // vibrate I love you
+        navigator.vibrate([80, 100, 300, 100, 100]);
+    }
+
     try
     {
         const response = await fetch(`${API_URL}/ping`, {

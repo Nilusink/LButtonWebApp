@@ -66,20 +66,29 @@ h1 {
         filter 0.15s ease;
 }
 
-.lbutton:hover {
+/* .lbutton:hover {
     filter: brightness(1.1);
-}
+} */
 
-.lbutton:active {
+/* .lbutton:active {
     transform: scale(0.94);
     box-shadow:
         0 2px 0 #68122e,
         0 3px 8px rgb(0 0 0 / 20%);
-}
+} */
 
 .lbutton:focus-visible {
     outline: 3px solid white;
     outline-offset: 5px;
+}
+
+.clicked {
+    transform: scale(0.94);
+    box-shadow:
+        0 2px 0 #68122e,
+        0 3px 8px rgb(0 0 0 / 20%);
+    
+    filter: brightness(1.1);
 }
 
 .heart {
